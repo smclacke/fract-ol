@@ -6,7 +6,7 @@
 #    By: smclacke <smclacke@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/03/11 22:28:12 by smclacke      #+#    #+#                  #
-#    Updated: 2023/03/17 16:34:49 by smclacke      ########   odam.nl          #
+#    Updated: 2023/03/17 20:57:19 by smclacke      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,6 @@ FFLAGS			= -framework Cocoa -framework OpenGL -framework IOKit -Iinclude -lglfw3
 
 SRCS			= 	main.c			\
 					hook.c			\
-					zoom.c			\
 					utils.c			\
 					init.c			\
 					mandelbrot.c	\

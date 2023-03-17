@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:13 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/16 23:13:18 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/17 21:14:49 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,37 @@ void	ft_move(t_fractol *data, char direction)
 	}
 }
 
+void	ft_zoom_in(t_fractol *data)
+{
+	double	xdelta;
+	double	ydelta;
+	printf("reached zoom_in\n");
+	xdelta = (data->x[1] - data->x[0]);
+	ydelta = (data->y[1] - data->y[0]);	
+	data->x[0] = data->x[1] + (1.0 / data->scale) * xdelta;
+	data->x[1] = data->x[1] + (xdelta - data->scale * xdelta) / 2;
+	data->y[0] = data->y[0] + (ydelta - (1.0 / data->scale) * ydelta) / 2;
+	data->y[1] = data->y[0] + data->scale * ydelta;
+	data->iter++;
+	fractal(data);
+}
+
+void	ft_zoom_out(t_fractol *data)
+{
+	double	xdelta;
+	double	ydelta;
+	
+	printf("reached zoom_out\n");
+	xdelta = (data->x[0] - data->x[1]);
+	ydelta = (data->y[0] - data->y[1]);	
+	data->x[1] = data->x[1] + (xdelta - data->scale * xdelta) / 2;
+	data->x[0] = data->x[1] + data->scale * xdelta;
+	data->y[1] = data->y[0] + data->scale * ydelta;
+	data->y[0] = data->y[0] + (ydelta - data->scale * ydelta) / 2;
+	data->iter--;
+	fractal(data);
+}
+
 void	ft_key_hook(mlx_key_data_t keydata, t_fractol *data)
 {
 	(void) keydata;
@@ -72,3 +103,21 @@ void	ft_key_hook(mlx_key_data_t keydata, t_fractol *data)
 	fractal(data);
 }
 
+void	ft_scroll_hook(double xdelta, double ydelta, t_fractol *data)
+{
+	(void) xdelta;
+	(void) ydelta;
+	printf("reached scroll hook\n");
+	if (ydelta < 0)
+	{
+		printf("reach 1\n");
+		ft_zoom_in(data);
+		fractal(data);
+	}
+	else if (ydelta > 0)
+	{
+		printf("reach 2\n");
+		ft_zoom_out(data);
+		fractal(data);
+	}
+}
