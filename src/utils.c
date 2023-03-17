@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:28:05 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/11 22:28:07 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/17 19:11:42 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ void	ft_help(void)
 	ft_putendl_fd("*!*!* FRACTALS! *!*!*\n", 1);
 	ft_putendl_fd("Please Input: \n\n./fractol + <fractol>\n", 1);
 	ft_putendl_fd("<fractol>: Mandelbrot OR Julia OR Burningship\n", 1);
-	ft_putendl_fd("** For Julia, you may include starting values", 1);
-	ft_putendl_fd("** between -2 and 2, with decimal.\n", 1);
+	ft_putendl_fd("** For Julia, you may include starting values.", 1);
 	ft_exit();
 }
 

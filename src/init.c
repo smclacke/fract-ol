@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:38 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/16 23:12:37 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/17 19:11:29 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	init(t_fractol *data)
 	data->y[0] = data->y[1] + (data->x[1] - data->x[0]) * HEIGHT / WIDTH;
 	data->xscale = 3;
 	data->yscale = 3;
+	data->zoom = 1.03;
 	data->julia[0] = 0;
 	data->julia[1] = 1;
 	data->colour[r] = 4;

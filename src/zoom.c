@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/16 15:30:59 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/16 22:49:57 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/17 20:06:55 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	ft_zoom_in(t_fractol *data)
 	data->x[0] = data->x[1] + (1.0 / zoom) * xdelta;
 	data->y[0] = data->y[0] + (ydelta - (1.0 / zoom) * ydelta) / 2;
 	data->iter++;
-	fractal(data);
 }
 
 void	ft_zoom_out(t_fractol *data)
@@ -45,8 +44,25 @@ void	ft_zoom_out(t_fractol *data)
 	ydelta = (data->y[0] - data->y[1]);
 	data->x[1] = data->x[1] + (xdelta - zoom * xdelta) / 2;
 	data->y[1] = data->y[0] + zoom * ydelta;
-	data->iter++;
-	fractal(data);
+	data->iter--;
 }
 
 
+void	ft_scroll_hook(double xdelta, double ydelta, t_fractol *data)
+{
+	(void) xdelta;
+	(void) ydelta;
+	printf("reached scroll hook\n");
+	if (ydelta < 0)
+	{
+		printf("reach 1\n");
+		ft_zoom_in(data);
+		fractal(data);
+	}
+	else if (ydelta > 0)
+	{
+		printf("reach 2\n");
+		ft_zoom_out(data);
+		fractal(data);
+	}
+}
