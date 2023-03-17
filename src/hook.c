@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:13 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/17 21:14:49 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/17 21:24:06 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ void	ft_zoom_in(t_fractol *data)
 	printf("reached zoom_in\n");
 	xdelta = (data->x[1] - data->x[0]);
 	ydelta = (data->y[1] - data->y[0]);	
-	data->x[0] = data->x[1] + (1.0 / data->scale) * xdelta;
+	data->x[0] = data->x[1] + data->scale * xdelta;
 	data->x[1] = data->x[1] + (xdelta - data->scale * xdelta) / 2;
-	data->y[0] = data->y[0] + (ydelta - (1.0 / data->scale) * ydelta) / 2;
+	data->y[0] = data->y[0] + (ydelta - data->scale * ydelta) / 2;
 	data->y[1] = data->y[0] + data->scale * ydelta;
 	data->iter++;
 	fractal(data);
