@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:28:21 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/16 23:14:10 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/17 17:55:57 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,17 +58,11 @@ void		colour_hook(t_fractol *data);
 void		ft_move(t_fractol *data, char direction);
 void		ft_key_hook(mlx_key_data_t keydata, t_fractol *data);
 
-//----------Mouse Hook----------//
-
-void		to_mouse(t_fractol *data);
-void		from_mouse(t_fractol *data);
-void		ft_mouse_hook(t_fractol *data);
-void		ft_scroll_hook(double xdelta, double ydelta, t_fractol *data);
-
 //----------Zoom----------//
 
 void		ft_zoom_in(t_fractol *data);
 void		ft_zoom_out(t_fractol *data);
+void		ft_scroll_hook(double xdelta, double ydelta, t_fractol *data);
 
 //----------Utils----------//
 
