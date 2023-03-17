@@ -6,18 +6,18 @@
 #    By: smclacke <smclacke@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/03/11 22:28:12 by smclacke      #+#    #+#                  #
-#    Updated: 2023/03/16 21:20:47 by smclacke      ########   odam.nl          #
+#    Updated: 2023/03/17 14:45:15 by smclacke      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 			= fractol
 
-INC_DIR			= -Iinclude -IMLX42/include -Ilibrary_42/include
+INC_DIR			= -Iinclude -Iinclude/MLX42/include -Iinclude/library_42/include
 
 CFLAGS 			= -Wall -Werror -Wextra -o3
 CC 				= gcc
 LFLAGS 			= -ldl -lglfw3 -pthread
-FFLAGS			= -framework Cocoa -framework OpenGL -framework IOKit -lm -Iinclude -lglfw3 -IMLX42/include -Ilibrary_42/include
+FFLAGS			= -framework Cocoa -framework OpenGL -framework IOKit -lm -Iinclude -lglfw3
 
 SRCS			= 	main.c			\
 					mouse_hook.c	\
@@ -40,7 +40,7 @@ OBJ				= $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.c=.o)))
 all : $(NAME) 
 
 $(NAME) : $(OBJ)
-	@ $(CC) $^ $(CFLAGS) library_42/libft.a MLX42/build/libmlx42.a $(FFLAGS) $(LFLAGS) -o $(NAME)
+	@ $(CC) $^ $(CFLAGS) include/library_42/libft.a include/MLX42/build/libmlx42.a $(FFLAGS) $(LFLAGS) -o $(NAME)
 	@ echo "Made!"
 
 $(OBJ_DIR):
