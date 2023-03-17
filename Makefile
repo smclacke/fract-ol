@@ -6,7 +6,7 @@
 #    By: smclacke <smclacke@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/03/11 22:28:12 by smclacke      #+#    #+#                  #
-#    Updated: 2023/03/17 14:45:15 by smclacke      ########   odam.nl          #
+#    Updated: 2023/03/17 16:33:09 by smclacke      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,6 @@ LFLAGS 			= -ldl -lglfw3 -pthread
 FFLAGS			= -framework Cocoa -framework OpenGL -framework IOKit -lm -Iinclude -lglfw3
 
 SRCS			= 	main.c			\
-					mouse_hook.c	\
 					hook.c			\
 					zoom.c			\
 					utils.c			\
