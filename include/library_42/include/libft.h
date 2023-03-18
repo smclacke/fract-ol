@@ -6,7 +6,7 @@
 /*   By: SarahLouise <SarahLouise@student.42.fr>      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/11 19:21:06 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/11 16:13:31 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/18 22:19:39 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,5 +128,7 @@ int		ft_isspace(int c);
 int		ft_ishex(int c);
 
 double	ft_atof(const char *str);
+
+char	*ft_lower_str(char *str);
 
 #endif

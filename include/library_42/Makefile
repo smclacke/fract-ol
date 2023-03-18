@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: SarahLouise <SarahLouise@student.42.fr>    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/03/05 21:10:20 by smclacke          #+#    #+#              #
-#    Updated: 2023/03/06 01:28:21 by SarahLouise      ###   ########.fr        #
+#                                                         ::::::::             #
+#    Makefile                                           :+:    :+:             #
+#                                                      +:+                     #
+#    By: SarahLouise <SarahLouise@student.42.fr>      +#+                      #
+#                                                    +#+                       #
+#    Created: 2023/03/05 21:10:20 by smclacke      #+#    #+#                  #
+#    Updated: 2023/03/18 22:18:56 by smclacke      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,7 @@ SRCS = ft_isalpha.c \
 	ft_ishex.c        \
 	ft_isspace.c      \
 	ft_strcmp.c       \
+	ft_lower_str.c    \
 
 SRC_DIR = src
 SRC = $(addprefix $(SRC_DIR)/, $(SRCS))
