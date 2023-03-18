@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:57 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/16 16:39:15 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/18 19:03:55 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@ void	mandelbrot(t_fractol *data)
 	y = 0;
 	while (x < WIDTH)
 	{
-		pos[X] = data->x[LT] + (x / WIDTH) * (data->x[RT] - data->x[LT]);
+		pos[X] = (data->x[LT] + (x / WIDTH) * (data->x[RT] - data->x[LT])) * data->zoom;
 		while (y < HEIGHT)
 		{
-			pos[Y] = data->y[UP] + (y / HEIGHT) * (data->y[DN] - data->y[UP]);
+			pos[Y] = (data->y[UP] + (y / HEIGHT) * (data->y[DN] - data->y[UP])) * data->zoom;
 			iter = init_mandelbrot(data->iter, pos[X], pos[Y]);
 			if (iter == MAX_ITER)
 				colour = 0xFF;
@@ -61,3 +61,7 @@ void	mandelbrot(t_fractol *data)
 		y = 0;
 	}
 }
+
+// zoom = 0.8;
+// width      		((x / (width * zoom)) * 4 -2) 
+// width      		((x / (width / zoom)) * 4 -2) 

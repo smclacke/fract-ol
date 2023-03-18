@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:13 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/17 21:24:06 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/18 19:47:37 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,55 +31,50 @@ void	ft_move(t_fractol *data, char direction)
 {
 	if (direction == 'L')
 	{
-		data->x[LT] = data->x[LT] + data->xscale * -1 / 100;
-		data->x[RT] = data->x[RT] + data->xscale * -1 / 100;
+		data->x[LT] = data->x[LT] + data->xscale / 25;
+		data->x[RT] = data->x[RT] + data->xscale / 25;
 	}
 	if (direction == 'R')
 	{
-		data->x[LT] = data->x[LT] - data->xscale * -1 / 100;
-		data->x[RT] = data->x[RT] - data->xscale * -1 / 100;
+		data->x[LT] = data->x[LT] - data->xscale / 25;
+		data->x[RT] = data->x[RT] - data->xscale / 25;
 	}
 	if (direction == 'U')
 	{
-		data->y[LT] = data->y[LT] + data->yscale * -1 / 100;
-		data->y[RT] = data->y[RT] + data->yscale * -1 / 100;
+		data->y[LT] = data->y[LT] - data->yscale / 25;
+		data->y[RT] = data->y[RT] - data->yscale / 25;
 	}
 	if (direction == 'D')
 	{
-		data->y[LT] = data->y[LT] - data->yscale * -1 / 100;
-		data->y[RT] = data->y[RT] - data->yscale * -1 / 100;
+		data->y[LT] = data->y[LT] + data->yscale / 25;
+		data->y[RT] = data->y[RT] + data->yscale / 25;
 	}
 }
 
 void	ft_zoom_in(t_fractol *data)
 {
-	double	xdelta;
-	double	ydelta;
-	printf("reached zoom_in\n");
-	xdelta = (data->x[1] - data->x[0]);
-	ydelta = (data->y[1] - data->y[0]);	
-	data->x[0] = data->x[1] + data->scale * xdelta;
-	data->x[1] = data->x[1] + (xdelta - data->scale * xdelta) / 2;
-	data->y[0] = data->y[0] + (ydelta - data->scale * ydelta) / 2;
-	data->y[1] = data->y[0] + data->scale * ydelta;
-	data->iter++;
-	fractal(data);
+	data->zoom *= 0.8;
+	printf("%d\n", data->mouse[X]);
+	printf("%d\n", data->mouse[Y]);
+	data->scale += ((data->mouse[X] / WIDTH) -.5) * data->zoom;
+	data->scale += ((data->mouse[X] / WIDTH) -.5) * data->zoom;
+	data->scale += ((data->mouse[Y] / HEIGHT) -.5) * data->zoom;
+	data->scale += ((data->mouse[Y] / HEIGHT) -.5) * data->zoom;
 }
+
+
+// -2   0   2
+// zoom = 0.5
+// coordinates * zoom
+// -1   0   1
 
 void	ft_zoom_out(t_fractol *data)
 {
-	double	xdelta;
-	double	ydelta;
-	
-	printf("reached zoom_out\n");
-	xdelta = (data->x[0] - data->x[1]);
-	ydelta = (data->y[0] - data->y[1]);	
-	data->x[1] = data->x[1] + (xdelta - data->scale * xdelta) / 2;
-	data->x[0] = data->x[1] + data->scale * xdelta;
-	data->y[1] = data->y[0] + data->scale * ydelta;
-	data->y[0] = data->y[0] + (ydelta - data->scale * ydelta) / 2;
-	data->iter--;
-	fractal(data);
+	data->x[LT] -= ((data->mouse[X] / WIDTH) -.5) * data->zoom;
+	data->x[RT] -= ((data->mouse[X] / WIDTH) -.5) * data->zoom;
+	data->y[LT] -= ((data->mouse[Y] / HEIGHT) -.5) * data->zoom;
+	data->y[RT] -= ((data->mouse[Y] / HEIGHT) -.5) * data->zoom;
+	data->zoom /= 0.8;
 }
 
 void	ft_key_hook(mlx_key_data_t keydata, t_fractol *data)
@@ -107,17 +102,10 @@ void	ft_scroll_hook(double xdelta, double ydelta, t_fractol *data)
 {
 	(void) xdelta;
 	(void) ydelta;
-	printf("reached scroll hook\n");
-	if (ydelta < 0)
-	{
-		printf("reach 1\n");
+	mlx_get_mouse_pos(data->mlx, &data->mouse[X], &data->mouse[Y]);
+	if (ydelta > 0)
 		ft_zoom_in(data);
-		fractal(data);
-	}
-	else if (ydelta > 0)
-	{
-		printf("reach 2\n");
+	else
 		ft_zoom_out(data);
-		fractal(data);
-	}
+	fractal(data);
 }
