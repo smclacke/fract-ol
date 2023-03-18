@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:57 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/18 19:03:55 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/18 22:00:04 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 // Zn+1 = Zn2 + C
 
-float	init_mandelbrot(float iter, float x1, float y1)
+double	init_mandelbrot(double iter, double x1, double y1)
 {
-	float	var;
-	float	x;
-	float	y;
+	double	var;
+	double	x;
+	double	y;
 
 	x = x1;
 	y = y1;
@@ -35,20 +35,20 @@ float	init_mandelbrot(float iter, float x1, float y1)
 
 void	mandelbrot(t_fractol *data)
 {
-	float	iter;
+	double	iter;
 	int		colour;
-	float	x;
-	float	y;
-	float	pos[2];
+	double	x;
+	double	y;
+	double	pos[2];
 
 	x = 0;
 	y = 0;
 	while (x < WIDTH)
 	{
-		pos[X] = (data->x[LT] + (x / WIDTH) * (data->x[RT] - data->x[LT])) * data->zoom;
+		pos[X] = (data->x[LT] + (x / WIDTH) * (data->x[RT] - data->x[LT] / data->zoom)) * data->zoom;
 		while (y < HEIGHT)
 		{
-			pos[Y] = (data->y[UP] + (y / HEIGHT) * (data->y[DN] - data->y[UP])) * data->zoom;
+			pos[Y] = (data->y[UP] + (y / HEIGHT) * (data->y[DN] - data->y[UP] / data->zoom)) * data->zoom;
 			iter = init_mandelbrot(data->iter, pos[X], pos[Y]);
 			if (iter == MAX_ITER)
 				colour = 0xFF;
@@ -60,7 +60,15 @@ void	mandelbrot(t_fractol *data)
 		x++;
 		y = 0;
 	}
+	printf("pos[X] = %f\n", pos[X]);
+	printf("pos[Y] = %f\n", pos[Y]);
+	printf("x[LT] = %f\n", data->x[LT]);
+	printf("x[RT] = %f\n", data->x[RT]);
+	printf("y[LT] = %f\n", data->y[LT]);
+	printf("y[RT] = %f\n", data->y[RT]);
 }
+
+// WHERE DO THE DATA->ZOOM'S GOOOO?
 
 // zoom = 0.8;
 // width      		((x / (width * zoom)) * 4 -2) 

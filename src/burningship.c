@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:20 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/18 19:33:59 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/18 21:28:26 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 // z = abs(z)2 + c
 
-float	init_burning(float iter, float x1, float y1)
+double	init_burning(double iter, double x1, double y1)
 {
-	float	var;
-	float	x;
-	float	y;
+	double	var;
+	double	x;
+	double	y;
 
 	x = x1;
 	y = y1;
@@ -35,11 +35,11 @@ float	init_burning(float iter, float x1, float y1)
 
 void	burningship(t_fractol *data)
 {
-	float	iter;
+	double	iter;
 	int		colour;
-	float	x;
-	float	y;
-	float	pos[2];
+	double	x;
+	double	y;
+	double	pos[2];
 
 	x = 0;
 	y = 0;

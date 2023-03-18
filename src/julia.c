@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:44 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/18 19:32:43 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/18 21:27:52 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 // z = z2 + c
 
-float	init_julia(t_fractol *data, float iter, float x, float y)
+double	init_julia(t_fractol *data, double iter, double x, double y)
 {
-	float	var;
+	double	var;
 
 	iter = 0;
 	while ((x * x + y * y) < 4 && iter < MAX_ITER)
@@ -31,11 +31,11 @@ float	init_julia(t_fractol *data, float iter, float x, float y)
 
 void	julia(t_fractol *data)
 {
-	float	iter;
+	double	iter;
 	int		colour;
-	float	x;
-	float	y;
-	float	pos[2];
+	double	x;
+	double	y;
+	double	pos[2];
 
 	x = 0;
 	y = 0;

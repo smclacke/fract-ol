@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:38 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/18 19:23:27 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/18 22:26:00 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,27 @@ void	init(t_fractol *data)
 	data->julia[1] = 1;
 	data->colour[r] = 4;
 	data->colour[g] = 8;
-	data->colour[b] = 12;
+	data->colour[b] = 10;
 	data->zoom = 1;
 	fractal(data);
 }
 
 void	check_data(t_fractol *data, char **argv)
 {
-	if (ft_strcmp(argv[1], "Mandelbrot") == 0)
+	char	*lowered;
+
+	lowered = ft_lower_str(argv[1]);
+	if (ft_strcmp(lowered, "mandelbrot") == 0)
 	{
 		data->set = MANDELBROT;
 		ft_controls();
 	}
-	else if (ft_strcmp(argv[1], "Julia") == 0)
+	else if (ft_strcmp(lowered, "julia") == 0)
 	{
 		data->set = JULIA;
 		ft_controls();
 	}
-	else if (ft_strcmp(argv[1], "Burningship") == 0)
+	else if (ft_strcmp(lowered, "burningship") == 0)
 	{
 		data->set = BURNINGSHIP;
 		ft_controls();
