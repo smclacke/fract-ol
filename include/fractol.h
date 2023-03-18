@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:28:21 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/17 17:55:57 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/18 19:34:15 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define WIDTH 1000
 # define HEIGHT 1000
-# define MAX_ITER 100
+# define MAX_ITER 50
 
 # define MANDELBROT 1
 # define JULIA 2
@@ -47,8 +47,10 @@ typedef struct s_fractol {
 	float				x[2];
 	float				y[2];
 	float				julia[2];
+	int					mouse[2];
 	float				xscale;
 	float				yscale;
+	float				scale;
 	double				zoom;
 }	t_fractol;
 
@@ -56,12 +58,9 @@ typedef struct s_fractol {
 
 void		colour_hook(t_fractol *data);
 void		ft_move(t_fractol *data, char direction);
-void		ft_key_hook(mlx_key_data_t keydata, t_fractol *data);
-
-//----------Zoom----------//
-
 void		ft_zoom_in(t_fractol *data);
 void		ft_zoom_out(t_fractol *data);
+void		ft_key_hook(mlx_key_data_t keydata, t_fractol *data);
 void		ft_scroll_hook(double xdelta, double ydelta, t_fractol *data);
 
 //----------Utils----------//
