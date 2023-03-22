@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:57 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/22 18:42:27 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/22 19:40:03 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,3 @@ void	mandelbrot(t_fractol *data)
 		y = 0;
 	}
 }
- 
