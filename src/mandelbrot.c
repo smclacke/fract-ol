@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:57 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/22 14:49:15 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/22 18:42:27 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,16 +60,5 @@ void	mandelbrot(t_fractol *data)
 		x++;
 		y = 0;
 	}
-	printf("pos[X] = %f\n", pos[X]);
-	printf("pos[Y] = %f\n", pos[Y]);
-	printf("x[LT] = %f\n", data->x[LT]);
-	printf("x[RT] = %f\n", data->x[RT]);
-	printf("y[UP] = %f\n", data->y[UP]);
-	printf("y[DN] = %f\n", data->y[DN]);
 }
-
-// WHERE DO THE DATA->ZOOM'S GOOOO?
-
-// zoom = 0.8;
-// width      		((x / (width * zoom)) * 4 -2) 
-// width      		((x / (width / zoom)) * 4 -2) 
+ 
