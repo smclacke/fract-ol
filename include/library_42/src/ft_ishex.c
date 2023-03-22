@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/04 16:01:48 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/04 16:01:54 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/22 20:40:38 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_ishex(int c)
 		return (c);
 	c = ft_toupper(c);
 	if (c >= 'A' && c <= 'F')
-		return(c);
+		return (c);
 	else
 		return (0);
 }

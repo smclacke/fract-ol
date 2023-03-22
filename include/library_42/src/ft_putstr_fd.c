@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/19 14:06:07 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/04 17:12:19 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/22 20:40:23 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,3 @@ void	ft_putstr_fd(char *s, int fd)
 // 		i++;
 // 	}
 // }
-
