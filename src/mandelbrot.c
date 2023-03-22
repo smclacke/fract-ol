@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:57 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/18 22:00:04 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/22 14:49:15 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@ void	mandelbrot(t_fractol *data)
 	y = 0;
 	while (x < WIDTH)
 	{
-		pos[X] = (data->x[LT] + (x / WIDTH) * (data->x[RT] - data->x[LT] / data->zoom)) * data->zoom;
+		pos[X] = (data->x[LT] + (x / WIDTH) * (data->x[RT] - data->x[LT]));
 		while (y < HEIGHT)
 		{
-			pos[Y] = (data->y[UP] + (y / HEIGHT) * (data->y[DN] - data->y[UP] / data->zoom)) * data->zoom;
+			pos[Y] = (data->y[UP] + (y / HEIGHT) * (data->y[DN] - data->y[UP]));
 			iter = init_mandelbrot(data->iter, pos[X], pos[Y]);
 			if (iter == MAX_ITER)
 				colour = 0xFF;
@@ -64,8 +64,8 @@ void	mandelbrot(t_fractol *data)
 	printf("pos[Y] = %f\n", pos[Y]);
 	printf("x[LT] = %f\n", data->x[LT]);
 	printf("x[RT] = %f\n", data->x[RT]);
-	printf("y[LT] = %f\n", data->y[LT]);
-	printf("y[RT] = %f\n", data->y[RT]);
+	printf("y[UP] = %f\n", data->y[UP]);
+	printf("y[DN] = %f\n", data->y[DN]);
 }
 
 // WHERE DO THE DATA->ZOOM'S GOOOO?
