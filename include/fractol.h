@@ -6,16 +6,16 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:28:21 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/18 22:25:30 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/22 18:49:16 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# define WIDTH 1000
-# define HEIGHT 1000
-# define MAX_ITER 50
+# define WIDTH 600
+# define HEIGHT 600
+# define MAX_ITER 500
 
 # define MANDELBROT 1
 # define JULIA 2
@@ -50,27 +50,24 @@ typedef struct s_fractol {
 	int					mouse[2];
 	double				xscale;
 	double				yscale;
-	double				scale;
-	double				zoom;
 }	t_fractol;
 
 //----------Hook----------//
-
 void		colour_hook(t_fractol *data);
 void		ft_move(t_fractol *data, char direction);
-// void		ft_zoom_in(t_fractol *data);
-// void		ft_zoom_out(t_fractol *data);
 void		ft_key_hook(mlx_key_data_t keydata, t_fractol *data);
+
+//--------Scroll Hook--------//
+void		ft_zoom_in(t_fractol *data);
+void		ft_zoom_out(t_fractol *data);
 void		ft_scroll_hook(double xdelta, double ydelta, t_fractol *data);
 
 //----------Utils----------//
-
 void		ft_controls(void);
 void		ft_exit(void);
 void		ft_help(void);
 
 //----------Init----------//
-
 void		init(t_fractol *data);
 void		check_data(t_fractol *data, char **argv);
 int			fractal(t_fractol *data);
@@ -78,22 +75,18 @@ void		julia_args(t_fractol *data, char **argv);
 uint32_t	get_rgba(t_fractol *data, float iter);
 
 //----------Julia----------//
-
 double		init_julia(t_fractol *data, double iter, double x, double y);
 void		julia(t_fractol *data);
 
 //----------Mandelbrot----------//
-
 double		init_mandelbrot(double iter, double x1, double y1);
 void		mandelbrot(t_fractol *data);
 
 //----------Burningship----------//
-
 double		init_burning(double iter, double x1, double y1);
 void		burningship(t_fractol *data);
 
 //----------Colour----------//
-
 void		shifty(t_fractol *data);
 void		darkness(t_fractol *data);
 void		blueness(t_fractol *data);
