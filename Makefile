@@ -6,7 +6,7 @@
 #    By: smclacke <smclacke@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/03/11 22:28:12 by smclacke      #+#    #+#                  #
-#    Updated: 2023/03/22 18:45:48 by smclacke      ########   odam.nl          #
+#    Updated: 2023/03/22 19:35:29 by smclacke      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,10 +42,8 @@ $(NAME) : $(OBJ)
 	@ $(CC) $^ $(CFLAGS) include/library_42/libft.a include/MLX42/build/libmlx42.a $(FFLAGS) $(LFLAGS) -o $(NAME)
 	@ echo "Made!"
 
-$(OBJ_DIR):
-	@ mkdir -p obj
-	
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(OBJ_DIR)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@ mkdir -p $(OBJ_DIR)
 	@ $(CC) $(CFLAGS) $(INC_DIR) -c $< -o $@
 
 open: $(NAME)
