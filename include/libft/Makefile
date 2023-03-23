@@ -6,7 +6,7 @@
 #    By: SarahLouise <SarahLouise@student.42.fr>      +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/03/05 21:10:20 by smclacke      #+#    #+#                  #
-#    Updated: 2023/03/23 17:41:49 by smclacke      ########   odam.nl          #
+#    Updated: 2023/03/23 20:49:04 by smclacke      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,6 @@ SRCS = ft_isalpha.c \
     ft_lstmap.c       \
     ft_lstnew.c       \
     ft_lstsize.c      \
-	ft_atof.c         \
 	ft_ishex.c        \
 	ft_isspace.c      \
 	ft_strcmp.c       \
