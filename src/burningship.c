@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   burningship.c                                      :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2023/03/11 22:27:20 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/22 18:46:33 by smclacke      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   burningship.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: SarahLouise <SarahLouise@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/11 22:27:20 by smclacke          #+#    #+#             */
+/*   Updated: 2023/03/23 12:27:26 by SarahLouise      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ double	init_burning(double iter, double x1, double y1)
 	iter = 0;
 	while ((x * x) + (y * y) < 4 && iter < MAX_ITER)
 	{
-		var = x * x - y * y + x1;
+		var = (x * x) - (y * y) + x1;
 		y = fabs(2 * x * y) - y1;
 		x = var;
 		iter++;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   julia.c                                            :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2023/03/11 22:27:44 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/22 18:46:20 by smclacke      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   julia.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: SarahLouise <SarahLouise@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/11 22:27:44 by smclacke          #+#    #+#             */
+/*   Updated: 2023/03/23 12:27:35 by SarahLouise      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ double	init_julia(t_fractol *data, double iter, double x, double y)
 	double	var;
 
 	iter = 0;
-	while ((x * x + y * y) < 4 && iter < MAX_ITER)
+	while ((x * x) + (y * y) < 4 && iter < MAX_ITER)
 	{
 		var = x;
 		x = (x * x) - (y * y) + data->julia[X];
