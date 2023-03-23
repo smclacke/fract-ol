@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:28:05 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/23 19:25:46 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/23 21:24:33 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,38 +36,33 @@ void	ft_controls(void)
 	ft_putendl_fd(" Press D, B, R or G and have fun :)", 1);
 }
 
-int	check_sign(const char *str)
+int	check_sign(char *str, int *sign)
 {
 	int	i;
-	int	sign;
 
 	i = 0;
-	sign = 1;
 	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
-			sign *= -1;
+			*sign *= -1;
+		i++;
 	}
-	printf("sign: %d\n", sign);
-	return (sign);
+	return (i);
 }
 
-double	ft_atof(const char *str)
+double	ft_atof(char *str)
 {
 	int		i;
 	int		sign;
 	double	result;
 	double	decimal;
 
-	if (!str)
-		return (0);
-	i = 0;
-	result = 0;
+	result = 0.0;
 	decimal = 1.0;
-	sign = check_sign(str);
+	sign = 1;
+	i = check_sign(str, &sign);
 	while (str[i] >= '0' && str[i] <= '9')
 		result = result * 10 + (str[i++] - '0');
-	printf("result: %f, sign: %d, str: %s\n", result, sign, str);
 	if (str[i] == '.')
 		i++;
 	while (str[i] >= '0' && str[i] <= '9')
@@ -75,9 +70,7 @@ double	ft_atof(const char *str)
 		result = result * 10 + (str[i++] - '0');
 		decimal *= 10;
 	}
-	printf("result: %f, sign: %d, str: %s\n", result, sign, str);
 	if (str[i] == '\0')
 		return (sign * result / decimal);
-	else
-		return (ft_help(), EXIT_FAILURE);
+	return (ft_help(), EXIT_FAILURE);
 }

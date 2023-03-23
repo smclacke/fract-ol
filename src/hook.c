@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:13 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/22 18:43:38 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/23 21:57:21 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,23 +31,23 @@ void	ft_move(t_fractol *data, char direction)
 {
 	if (direction == 'L')
 	{
-		data->x[LT] = data->x[LT] + data->xscale / 25;
-		data->x[RT] = data->x[RT] + data->xscale / 25;
+		data->x[LT] = data->x[LT] - data->xscale / 5;
+		data->x[RT] = data->x[RT] - data->xscale / 5;
 	}
 	if (direction == 'R')
 	{
-		data->x[LT] = data->x[LT] - data->xscale / 25;
-		data->x[RT] = data->x[RT] - data->xscale / 25;
+		data->x[LT] = data->x[LT] + data->xscale / 5;
+		data->x[RT] = data->x[RT] + data->xscale / 5;
 	}
 	if (direction == 'U')
 	{
-		data->y[LT] = data->y[LT] - data->yscale / 25;
-		data->y[RT] = data->y[RT] - data->yscale / 25;
+		data->y[LT] = data->y[LT] + data->yscale / 5;
+		data->y[RT] = data->y[RT] + data->yscale / 5;
 	}
 	if (direction == 'D')
 	{
-		data->y[LT] = data->y[LT] + data->yscale / 25;
-		data->y[RT] = data->y[RT] + data->yscale / 25;
+		data->y[LT] = data->y[LT] - data->yscale / 5;
+		data->y[RT] = data->y[RT] - data->yscale / 5;
 	}
 }
 

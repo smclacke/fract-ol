@@ -6,26 +6,17 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:51 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/23 18:39:34 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/23 21:54:17 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-// void	leaks(void)
-// {
-// 	system("leaks fractol");
-// }
-
 int	main(int argc, char **argv)
 {
 	t_fractol		data;
 
-	// atexit(leaks);
-	if (argc < 2 || argc > 4 || argc == 3)
-		return (ft_help(), EXIT_FAILURE);
-	if (argc == 4)
-		julia_args(&data, argv);
+	handle_args(&data, argv, argc);
 	check_data(&data, argv);
 	data.mlx = mlx_init(WIDTH, HEIGHT, "FRACING", true);
 	if (!data.mlx)
