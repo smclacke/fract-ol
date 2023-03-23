@@ -6,44 +6,37 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/04 16:01:22 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/23 17:53:38 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/23 21:25:27 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_sign(const char *str)
+int	check_sign(char *str, int *sign)
 {
 	int	i;
-	int	sign;
 
 	i = 0;
-	sign = 1;
 	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
-			sign *= -1;
+			*sign *= -1;
+		i++;
 	}
-	return (sign);
+	return (i);
 }
 
-double	ft_atof(const char *str)
+double	ft_atof(char *str)
 {
 	int		i;
 	int		sign;
 	double	result;
 	double	decimal;
 
-	if (!str)
-		return (0);
-	i = 0;
 	result = 0.0;
 	decimal = 1.0;
-	if (str[i])
-	{
-		sign = check_sign(str);
-		i++;
-	}
+	sign = 1;
+	i = check_sign(str, &sign);
 	while (str[i] >= '0' && str[i] <= '9')
 		result = result * 10 + (str[i++] - '0');
 	if (str[i] == '.')
@@ -53,5 +46,8 @@ double	ft_atof(const char *str)
 		result = result * 10 + (str[i++] - '0');
 		decimal *= 10;
 	}
-	return (sign * result / decimal);
+	if (str[i] == '\0')
+		return (sign * result / decimal);
+	else
+		return (-1);
 }
