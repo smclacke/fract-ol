@@ -6,21 +6,29 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:51 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/22 19:20:37 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/23 18:05:05 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
+void	leaks(void)
+{
+	system("leaks fractol");
+}
+
 int	main(int argc, char **argv)
 {
 	t_fractol		data;
 
-	if (argc < 2 || argc > 4)
+	atexit(leaks);
+	if (argc < 2 || argc > 4 || argc == 3)
 	{
 		ft_help();
 		return (EXIT_FAILURE);
 	}
+	if (argc == 4)
+		julia_args(&data, argv);
 	check_data(&data, argv);
 	data.mlx = mlx_init(WIDTH, HEIGHT, "FRACING", true);
 	if (!data.mlx)
@@ -31,8 +39,6 @@ int	main(int argc, char **argv)
 	if (mlx_image_to_window(data.mlx, data.img, 0, 0) == -1)
 		return (free(data.img), mlx_terminate(data.mlx), EXIT_FAILURE);
 	init(&data);
-	if (argc == 4)
-		julia_args(&data, argv);
 	mlx_key_hook(data.mlx, (mlx_keyfunc) ft_key_hook, &data);
 	mlx_scroll_hook(data.mlx, (mlx_scrollfunc) ft_scroll_hook, &data);
 	mlx_loop(data.mlx);

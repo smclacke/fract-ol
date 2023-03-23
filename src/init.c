@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:38 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/22 19:49:51 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/23 18:04:55 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,15 @@ void	check_data(t_fractol *data, char **argv)
 	}
 	else
 		ft_help();
+	free(lowered);
 }
 
 void	julia_args(t_fractol *data, char **argv)
 {
 	data->julia[1] = ft_atof(argv[3]);
 	data->julia[0] = ft_atof(argv[2]);
-	julia(data);
+	data->julia[1] = atof(argv[3]);
+	data->julia[0] = atof(argv[2]);
 }
 
 int	fractal(t_fractol *data)
