@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: SarahLouise <SarahLouise@student.42.fr>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/11 22:28:21 by smclacke          #+#    #+#             */
-/*   Updated: 2023/03/23 12:28:41 by SarahLouise      ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   fractol.h                                          :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: SarahLouise <SarahLouise@student.42.fr>      +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2023/03/11 22:28:21 by smclacke      #+#    #+#                 */
+/*   Updated: 2023/03/23 21:51:45 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,17 +66,20 @@ void		ft_scroll_hook(double xdelta, double ydelta, t_fractol *data);
 void		ft_controls(void);
 void		ft_exit(void);
 void		ft_help(void);
+double		ft_atof(char *str);
+int			check_sign(char *str, int *sign);
 
 //----------Init----------//
 void		init(t_fractol *data);
 void		check_data(t_fractol *data, char **argv);
 int			fractal(t_fractol *data);
-void		julia_args(t_fractol *data, char **argv);
+int			handle_args(t_fractol *data, char **argv, int argc);
 uint32_t	get_rgba(t_fractol *data, float iter);
 
 //----------Julia----------//
 double		init_julia(t_fractol *data, double iter, double x, double y);
 void		julia(t_fractol *data);
+int			julia_args(t_fractol *data, char **argv);
 
 //----------Mandelbrot----------//
 double		init_mandelbrot(double iter, double x1, double y1);
