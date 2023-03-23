@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:38 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/23 18:04:55 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/23 18:32:09 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,14 @@ void	julia_args(t_fractol *data, char **argv)
 	data->julia[0] = ft_atof(argv[2]);
 	data->julia[1] = atof(argv[3]);
 	data->julia[0] = atof(argv[2]);
+	printf("ft: %f\n", ft_atof(argv[3]));
+	printf("ft: %f\n", ft_atof(argv[2]));
+	printf("std: %f\n", atof(argv[3]));
+	printf("std: %f\n", atof(argv[2]));
+	if (data->julia[1] > 2 || data->julia[1] < -2)
+		ft_help();
+	if (data->julia[0] > 2 || data->julia[0] < -2)
+		ft_help();
 }
 
 int	fractal(t_fractol *data)

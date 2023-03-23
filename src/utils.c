@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:28:05 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/23 18:04:00 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/23 18:32:54 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,11 @@ double	ft_atof(const char *str)
 	i = 0;
 	result = 0.0;
 	decimal = 1.0;
-	sign = check_sign(str);
+	if (str[i])
+	{
+		sign = check_sign(str);
+		i++;
+	}
 	while (str[i] >= '0' && str[i] <= '9')
 		result = result * 10 + (str[i++] - '0');
 	if (str[i] == '.')

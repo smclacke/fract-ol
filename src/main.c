@@ -6,22 +6,22 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:51 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/23 18:05:05 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/23 18:18:06 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	leaks(void)
-{
-	system("leaks fractol");
-}
+// void	leaks(void)
+// {
+// 	system("leaks fractol");
+// }
 
 int	main(int argc, char **argv)
 {
 	t_fractol		data;
 
-	atexit(leaks);
+	// atexit(leaks);
 	if (argc < 2 || argc > 4 || argc == 3)
 	{
 		ft_help();
