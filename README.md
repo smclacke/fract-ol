@@ -1,4 +1,4 @@
-# fract-ol
+# fract'ol
 
 Fract'ol! 🌌
 
