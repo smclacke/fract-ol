@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   fractol.h                                          :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2023/03/11 22:28:21 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/22 19:14:03 by smclacke      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   fractol.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: SarahLouise <SarahLouise@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/11 22:28:21 by smclacke          #+#    #+#             */
+/*   Updated: 2023/03/23 12:28:41 by SarahLouise      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define WIDTH 600
 # define HEIGHT 600
-# define MAX_ITER 500
+# define MAX_ITER 50
 
 # define MANDELBROT 1
 # define JULIA 2
@@ -42,8 +42,8 @@ typedef struct s_fractol {
 	mlx_image_t			*img;
 	int					set;
 	enum e_colours		colour[3];
-	int					iter;
-	int					max_iter;
+	double				iter;
+	double				max_iter;
 	double				x[2];
 	double				y[2];
 	double				julia[2];
