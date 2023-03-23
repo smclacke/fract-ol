@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:51 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/23 18:18:06 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/23 18:39:34 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,7 @@ int	main(int argc, char **argv)
 
 	// atexit(leaks);
 	if (argc < 2 || argc > 4 || argc == 3)
-	{
-		ft_help();
-		return (EXIT_FAILURE);
-	}
+		return (ft_help(), EXIT_FAILURE);
 	if (argc == 4)
 		julia_args(&data, argv);
 	check_data(&data, argv);

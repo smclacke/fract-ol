@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:38 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/23 18:32:09 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/23 19:27:30 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,18 +58,18 @@ void	check_data(t_fractol *data, char **argv)
 
 void	julia_args(t_fractol *data, char **argv)
 {
-	data->julia[1] = ft_atof(argv[3]);
 	data->julia[0] = ft_atof(argv[2]);
-	data->julia[1] = atof(argv[3]);
-	data->julia[0] = atof(argv[2]);
-	printf("ft: %f\n", ft_atof(argv[3]));
-	printf("ft: %f\n", ft_atof(argv[2]));
-	printf("std: %f\n", atof(argv[3]));
-	printf("std: %f\n", atof(argv[2]));
-	if (data->julia[1] > 2 || data->julia[1] < -2)
-		ft_help();
-	if (data->julia[0] > 2 || data->julia[0] < -2)
-		ft_help();
+	data->julia[1] = ft_atof(argv[3]);
+	// data->julia[0] = atof(argv[2]);
+	// data->julia[1] = atof(argv[3]);
+	printf("ft 2: %f\n", data->julia[0]);
+	printf("ft 3: %f\n", data->julia[1]);
+	// printf("std 2: %f\n", atof(argv[2]));
+	// printf("std 3: %f\n", atof(argv[3]));
+	// if (data->julia[1] > 2 || data->julia[1] < -2)
+	// 	ft_help();
+	// if (data->julia[0] > 2 || data->julia[0] < -2)
+	// 	ft_help();
 }
 
 int	fractal(t_fractol *data)

@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:28:05 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/23 18:32:54 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/23 19:25:46 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int	check_sign(const char *str)
 		if (str[i] == '-')
 			sign *= -1;
 	}
+	printf("sign: %d\n", sign);
 	return (sign);
 }
 
@@ -61,15 +62,12 @@ double	ft_atof(const char *str)
 	if (!str)
 		return (0);
 	i = 0;
-	result = 0.0;
+	result = 0;
 	decimal = 1.0;
-	if (str[i])
-	{
-		sign = check_sign(str);
-		i++;
-	}
+	sign = check_sign(str);
 	while (str[i] >= '0' && str[i] <= '9')
 		result = result * 10 + (str[i++] - '0');
+	printf("result: %f, sign: %d, str: %s\n", result, sign, str);
 	if (str[i] == '.')
 		i++;
 	while (str[i] >= '0' && str[i] <= '9')
@@ -77,6 +75,7 @@ double	ft_atof(const char *str)
 		result = result * 10 + (str[i++] - '0');
 		decimal *= 10;
 	}
+	printf("result: %f, sign: %d, str: %s\n", result, sign, str);
 	if (str[i] == '\0')
 		return (sign * result / decimal);
 	else
