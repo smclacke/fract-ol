@@ -6,16 +6,16 @@
 /*   By: SarahLouise <SarahLouise@student.42.fr>      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:28:21 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/23 21:51:45 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/24 21:08:42 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# define WIDTH 600
-# define HEIGHT 600
-# define MAX_ITER 50
+# define WIDTH 700
+# define HEIGHT 700
+# define MAX_ITER 250
 
 # define MANDELBROT 1
 # define JULIA 2
