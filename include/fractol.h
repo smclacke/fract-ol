@@ -6,7 +6,7 @@
 /*   By: SarahLouise <SarahLouise@student.42.fr>      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:28:21 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/24 21:08:42 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/25 16:27:19 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define WIDTH 700
 # define HEIGHT 700
-# define MAX_ITER 250
+# define MAX_ITER 50
 
 # define MANDELBROT 1
 # define JULIA 2
@@ -30,7 +30,6 @@
 # include "libft.h"
 # include "MLX42/MLX42.h"
 # include <stddef.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <math.h>
