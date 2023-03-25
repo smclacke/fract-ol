@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   fractol.h                                          :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: SarahLouise <SarahLouise@student.42.fr>      +#+                     */
+/*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/03/11 22:28:21 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/25 16:27:19 by smclacke      ########   odam.nl         */
+/*   Created: 2023/03/25 20:23:31 by smclacke      #+#    #+#                 */
+/*   Updated: 2023/03/25 20:23:32 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
