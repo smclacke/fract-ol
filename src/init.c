@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:38 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/23 21:54:34 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/25 16:09:45 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,18 @@ void	init(t_fractol *data)
 	data->colour[g] = 8;
 	data->colour[b] = 10;
 	fractal(data);
+}
+
+int	handle_args(t_fractol *data, char **argv, int argc)
+{
+	if (argc < 2 || argc > 4 || argc == 3)
+		return (ft_help(), EXIT_FAILURE);
+	if (argc == 4)
+		julia_args(data, argv);
+	if (argc == 2)
+		data->julia[0] = 0;
+		data->julia[1] = 1;
+	return (0);
 }
 
 void	check_data(t_fractol *data, char **argv)
@@ -52,18 +64,6 @@ void	check_data(t_fractol *data, char **argv)
 	else
 		ft_help();
 	free(lowered);
-}
-
-int	handle_args(t_fractol *data, char **argv, int argc)
-{
-	if (argc < 2 || argc > 4 || argc == 3)
-		return (ft_help(), EXIT_FAILURE);
-	if (argc == 4)
-		julia_args(data, argv);
-	if (argc == 2)
-		data->julia[0] = 0;
-		data->julia[1] = 1;
-	return (0);
 }
 
 int	fractal(t_fractol *data)

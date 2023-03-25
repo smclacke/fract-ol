@@ -6,13 +6,13 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:57 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/22 19:40:03 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/03/25 16:10:31 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-// Zn+1 = Zn2 + C
+// z = z2 + c
 
 double	init_mandelbrot(double iter, double x1, double y1)
 {
