@@ -2,11 +2,13 @@
 
 Fract'ol! 🌌
 
-42 school project creating beautiful fractals.
+ - 42 school project creating beautiful fractals.
 
-Fractal sets include: Julia, Mandelbrot and Burningship.
+ - Fractal sets include: Julia, Mandelbrot and Burningship.
 
-Ensure you have cmake and glfw installed. Then simply make and run! :) ✌️💫
+ - Includes MLX42 graphical library: https://github.com/codam-coding-college/MLX42
+
+ - Ensure you have cmake and glfw installed. Then simply make and run! :) ✌️💫
 
 Screenshots:
 
