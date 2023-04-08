@@ -6,13 +6,11 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/02 14:03:36 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/04 17:11:48 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/04/07 14:40:07 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include<stdlib.h>
-#include<sys/queue.h>
 
 t_list	*ft_lstnew(void *content)
 {

@@ -6,7 +6,7 @@
 #    By: smclacke <smclacke@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/03/23 17:52:07 by smclacke      #+#    #+#                  #
-#    Updated: 2023/03/23 17:52:09 by smclacke      ########   odam.nl          #
+#    Updated: 2023/04/08 17:49:04 by smclacke      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,12 +35,23 @@ SRC				= $(addprefix $(SRC_DIR)/, $(SRCS))
 OBJ_DIR			= obj
 OBJ				= $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.c=.o)))
 
+## Colours ##
+RESET		:= \033[0m
+RED			:= \033[1;91m
+GREEN		:= \033[1;92m
+YELLOW		:= \033[1;93m
+BLUE		:= \033[1;94m
+PURPLE		:= \033[1;95m
+CYAN		:= \033[1;96m
+WHITE		:= \033[1;97m
+BLACK		:= \033[1;90m
 
 all : libft $(NAME)
 
 $(NAME) : $(OBJ)
+	@ echo "${BLUE}fractol compiling...${RESET}"
 	@ $(CC) $^ $(CFLAGS) $(INC_DIR) include/libft/libft.a include/MLX42/build/libmlx42.a $(FFLAGS) $(LFLAGS) -o $(NAME)
-	@ echo "Made!"
+	@ echo "${GREEN}fractol Made!${RESET}"
 
 libft:
 	@ make -C include/libft
@@ -55,12 +66,11 @@ open: $(NAME)
 clean:
 	@ make -C include/libft clean
 	@ rm -rf $(OBJ_DIR)
-	@ echo "Clean!"
 
 fclean: clean
 	@ make -C include/libft fclean
 	@ rm -f $(NAME)
-	@ echo "fCleaned!"
+	@ echo "${PURPLE}fractol fCleaned!${RESET}"
 
 re: fclean all
 

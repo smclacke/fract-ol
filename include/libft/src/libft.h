@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   libft.h                                            :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
+/*   By: SarahLouise <SarahLouise@student.42.fr>      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/03/25 20:24:42 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/25 20:24:43 by smclacke      ########   odam.nl         */
+/*   Created: 2022/10/11 19:21:06 by smclacke      #+#    #+#                 */
+/*   Updated: 2023/03/31 22:21:01 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,16 @@ int		ft_isspace(int c);
 
 int		ft_ishex(int c);
 
+double	ft_atof(char *str);
+
 char	*ft_lower_str(char *str);
+
+void	ft_putendl(char *s);
+
+void	ft_putstr(char *str);
+
+int		ft_putchar(char c);
+
+int		ft_arrlen(char **arr);
 
 #endif
