@@ -6,7 +6,7 @@
 #    By: SarahLouise <SarahLouise@student.42.fr>      +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/03/05 21:10:20 by smclacke      #+#    #+#                  #
-#    Updated: 2023/04/08 23:34:24 by smclacke      ########   odam.nl          #
+#    Updated: 2023/04/08 23:42:44 by smclacke      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,7 +94,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@ echo "${YELLOW} >>> libft compiling...${RESET}"
 	@ $(ARCHIVE) $(NAME) $(OBJ)
-	@ echo "${GREEN} -> libft Made!${RESET}"
+	@ echo "${GREEN} ---> libft Made!${RESET}"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@ mkdir -p $(OBJ_DIR)

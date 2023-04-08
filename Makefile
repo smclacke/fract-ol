@@ -6,7 +6,7 @@
 #    By: smclacke <smclacke@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/03/23 17:52:07 by smclacke      #+#    #+#                  #
-#    Updated: 2023/04/08 17:49:04 by smclacke      ########   odam.nl          #
+#    Updated: 2023/04/08 23:42:33 by smclacke      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,9 +49,9 @@ BLACK		:= \033[1;90m
 all : libft $(NAME)
 
 $(NAME) : $(OBJ)
-	@ echo "${BLUE}fractol compiling...${RESET}"
+	@ echo "${BLUE} >>> fractol compiling...${RESET}"
 	@ $(CC) $^ $(CFLAGS) $(INC_DIR) include/libft/libft.a include/MLX42/build/libmlx42.a $(FFLAGS) $(LFLAGS) -o $(NAME)
-	@ echo "${GREEN}fractol Made!${RESET}"
+	@ echo "${GREEN} ---> fractol Made!${RESET}"
 
 libft:
 	@ make -C include/libft
@@ -70,7 +70,7 @@ clean:
 fclean: clean
 	@ make -C include/libft fclean
 	@ rm -f $(NAME)
-	@ echo "${PURPLE}fractol fCleaned!${RESET}"
+	@ echo "${BLUE} // fractol fCleaned!${RESET}"
 
 re: fclean all
 
