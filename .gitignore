@@ -1,6 +1,12 @@
 # ignore all
 *
 
+# Unignore all dirs
+!*/
+
+# Unignore all with extensions
+!*.*
+
 # Object files
 *.o
 *.obj
@@ -24,3 +30,7 @@
 
 # DS_Store
 **/.DS_Store
+
+# Ignore `bin` dir
+bin/
+*/bin/*
