@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:38 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/30 19:53:42 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/04/17 04:01:45 by SarahLouise   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	init(t_fractol *data)
 
 int	handle_args(t_fractol *data, char **argv, int argc)
 {
-	if (argc < 2 || argc > 4 || argc == 3)
+	if (!(argc == 2 || argc == 4))
 		return (ft_help(), EXIT_FAILURE);
 	if (argc == 4)
 		julia_args(data, argv);

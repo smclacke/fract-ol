@@ -6,7 +6,7 @@
 /*   By: SarahLouise <SarahLouise@student.42.fr>      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/11 19:21:06 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/04/08 18:09:55 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/04/15 19:49:00 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,9 @@
 # define LIBFT_H
 
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
-# include <string.h>
-# include <sys/queue.h>
-# include <stdarg.h>
+# include <stdio.h>
 # include <limits.h>
-# include <fcntl.h>
 
 //--------------- libft -----------------------//
 
@@ -118,6 +114,24 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
+//----------- get_next_line --------------//
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+size_t	gnl_strlen(const char *s, int temp);
+
+char	*gnl_strdup(const char *s1);
+
+char	*gnl_strjoin(char const *s1, char const *s2);
+
+char	*gnl_strchr(const char *s, int c);
+
+size_t	gnl_strlcpy(char *dst, const char *src, size_t dstsize);
+
+char	*get_next_line(int fd);
+
 //--------------- Extra ------------------//
 
 int		ft_strcmp(const char *s1, const char *s2);
@@ -134,8 +148,10 @@ void	ft_putendl(char *s);
 
 void	ft_putstr(char *str);
 
-int		ft_putchar(char c);
+void	ft_putchar(char c);
 
 int		ft_arrlen(char **arr);
+
+void	ft_error(void);
 
 #endif

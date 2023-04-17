@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_strcmp.c                                        :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
+/*   By: SarahLouise <SarahLouise@student.42.fr>      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/04 16:02:54 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/04 17:12:27 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/04/10 16:49:18 by SarahLouise   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 	while (s1[i] || s2[i])
 	{
 		if ((unsigned char)(s1)[i] != (unsigned char)(s2)[i])
-		{
 			return ((unsigned char)(s1)[i] - (unsigned char)(s2)[i]);
-		}
 		i++;
 	}
 	return (0);

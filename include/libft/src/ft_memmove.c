@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_memmove.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
+/*   By: SarahLouise <SarahLouise@student.42.fr>      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/15 20:00:10 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/04 17:12:01 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/04/10 16:46:45 by SarahLouise   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	if (d > s)
 	{
 		while (len-- > 0)
-		{
 			d[len] = s[len];
-		}
 	}
 	else
 	{

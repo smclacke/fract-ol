@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memset.c                                        :+:    :+:            */
+/*   ft_arrlen.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: SarahLouise <SarahLouise@student.42.fr>      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/13 11:27:22 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/04/10 16:46:49 by SarahLouise   ########   odam.nl         */
+/*   Created: 2023/03/31 18:53:57 by smclacke      #+#    #+#                 */
+/*   Updated: 2023/04/14 15:31:24 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+int	ft_arrlen(char **arr)
 {
-	unsigned char	*ptr;
+	int	i;
 
-	ptr = ((unsigned char *)b);
-	while (len-- > 0)
-		*(ptr++) = ((unsigned char)c);
-	return (b);
+	i = 0;
+	while (arr[i])
+		i++;
+	return (i);
 }
