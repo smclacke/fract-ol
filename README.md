@@ -1,7 +1,5 @@
 # fract'ol
 
-## Fract'ol! 🌌
-
  - 42 school project creating beautiful fractals.
 
  - Fractal sets include: Julia, Mandelbrot and Burningship.
