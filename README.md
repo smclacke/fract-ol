@@ -1,6 +1,6 @@
 # fract'ol
 
-Fract'ol! 🌌
+## Fract'ol! 🌌
 
  - 42 school project creating beautiful fractals.
 
