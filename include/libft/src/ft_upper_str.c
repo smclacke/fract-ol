@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_error.c                                         :+:    :+:            */
+/*   ft_upper_str.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/04/15 16:38:03 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/04/18 17:38:15 by smclacke      ########   odam.nl         */
+/*   Created: 2023/04/22 22:13:52 by smclacke      #+#    #+#                 */
+/*   Updated: 2023/04/22 22:18:38 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_error(void)
+char	*ft_upper_str(char *str)
 {
-	ft_putendl_fd("Error", 2);
-	exit(EXIT_FAILURE);
+	int		len;
+	int		i;
+
+	i = 0;
+	len = ft_strlen(str);
+	while (i < len)
+	{
+		str[i] = ft_toupper(str[i]);
+		i++;
+	}
+	return (str);
 }

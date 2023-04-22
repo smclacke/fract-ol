@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/24 15:39:55 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/04/15 20:18:23 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/04/18 17:44:56 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int	ft_atoi(const char *str)
 {
-	int		neg;
+	long	neg;
 	long	num;
-	int		i;
+	long	i;
 
 	i = 0;
 	neg = 1;
 	num = 0;
-	while (ft_isspace(str[i]))
+	while ((ft_isspace(str[i])))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
@@ -35,6 +35,6 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	if ((num * neg) > INT_MAX || (num * neg) < INT_MIN)
-		write(1, "NOPE\n", 10);
+		ft_error();
 	return (num * neg);
 }

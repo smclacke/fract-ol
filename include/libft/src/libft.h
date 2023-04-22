@@ -6,7 +6,7 @@
 /*   By: SarahLouise <SarahLouise@student.42.fr>      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/11 19:21:06 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/04/15 19:49:00 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/04/22 22:18:57 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,6 +144,8 @@ double	ft_atof(char *str);
 
 char	*ft_lower_str(char *str);
 
+char	*ft_upper_str(char *str);
+
 void	ft_putendl(char *s);
 
 void	ft_putstr(char *str);
@@ -153,5 +155,7 @@ void	ft_putchar(char c);
 int		ft_arrlen(char **arr);
 
 void	ft_error(void);
+
+void	ft_free_arr(char **arr);
 
 #endif

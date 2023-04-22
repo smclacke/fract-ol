@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_error.c                                         :+:    :+:            */
+/*   ft_free_arr.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/04/15 16:38:03 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/04/18 17:38:15 by smclacke      ########   odam.nl         */
+/*   Created: 2023/04/18 20:53:30 by smclacke      #+#    #+#                 */
+/*   Updated: 2023/04/18 22:35:09 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_error(void)
+void	ft_free_arr(char **arr)
 {
-	ft_putendl_fd("Error", 2);
-	exit(EXIT_FAILURE);
+	int	i;
+
+	i = 0;
+	while (arr[i])
+		free(arr[i++]);
+	free(arr);
 }
