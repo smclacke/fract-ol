@@ -7,6 +7,13 @@
  - Includes MLX42 graphical library: https://github.com/codam-coding-college/MLX42
 
  - Ensure you have cmake and glfw installed. Then simply make and run! :) ✌️💫
+ 
+ Needed improvments:
+ - change fractal set with keys after execution
+ - change iter with keys after execution
+ - better colours
+ - iteration in window
+ - instructions + keys in window
 
 Screenshots:
 
