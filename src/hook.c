@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:13 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/05/02 22:13:26 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/05/02 22:23:30 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,10 @@ void	ft_key_hook(mlx_key_data_t keydata, t_fractol *data)
 	if (mlx_is_key_down(data->mlx, MLX_KEY_J))
 	{
 		mlx_get_mouse_pos(data->mlx, &data->mouse[X], &data->mouse[Y]);
-		data->julia[X] = data->x[LT] + ((double)data->mouse[X] / WIDTH) * (data->x[RT] - data->x[LT]);
-		data->julia[Y] = data->y[UP] + ((double)data->mouse[Y] / HEIGHT) * (data->y[DN] - data->y[UP]);
+		data->julia[X] = data->x[LT] + ((double)data->mouse[X] / WIDTH)
+			* (data->x[RT] - data->x[LT]);
+		data->julia[Y] = data->y[UP] + ((double)data->mouse[Y] / HEIGHT)
+			* (data->y[DN] - data->y[UP]);
 		fractal(data);
 	}
 	colour_hook(data);
