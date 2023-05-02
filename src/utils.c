@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:28:05 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/23 21:24:33 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/05/02 22:21:41 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_help(void)
 	ft_putendl_fd("*!*!* FRACTALS! *!*!*\n", 1);
 	ft_putendl_fd("Please Input: \n\n./fractol + <fractol>\n", 1);
 	ft_putendl_fd("<fractol>: Mandelbrot OR Julia OR Burningship.\n", 1);
-	ft_putendl_fd("** For Julia, you may include x and y starting values", 1);
+	ft_putendl_fd("** For Julia: you may include x and y starting values", 1);
 	ft_putendl_fd("** between -2 and 2, with a decimal point.", 1);
 	ft_exit();
 }
@@ -34,6 +34,8 @@ void	ft_controls(void)
 	ft_putendl_fd(" Moving fractal: -> arrow keys", 1);
 	ft_putendl_fd(" Press S for some colour shifting shenanigans!", 1);
 	ft_putendl_fd(" Press D, B, R or G and have fun :)", 1);
+	ft_putendl_fd("** For Julia: press J, hold the curser down", 1);
+	ft_putendl_fd("** and move around to change the calculations.", 1);
 }
 
 int	check_sign(char *str, int *sign)
