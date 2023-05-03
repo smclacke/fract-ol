@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:38 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/04/17 04:01:45 by SarahLouise   ########   odam.nl         */
+/*   Updated: 2023/05/03 22:04:32 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	init(t_fractol *data)
 	data->yscale = 0.1;
 	data->mouse[0] = 0;
 	data->mouse[1] = 1;
-	data->colour[r] = 4;
-	data->colour[g] = 8;
-	data->colour[b] = 10;
+	data->colour[r] = 8;
+	data->colour[g] = 4;
+	data->colour[b] = 2;
 	fractal(data);
 }
 
