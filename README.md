@@ -9,11 +9,10 @@
  - Ensure you have cmake and glfw installed. Then simply make and run! :) ✌️💫
  
  Needed improvments:
- - change fractal set with keys after execution
- - change iter with keys after execution
  - better colours
+ - better movement + handle movement when zoomed in
  - iteration in window
- - instructions + keys in window
+ - instructions + keys in separate window
 
 Screenshots:
 
