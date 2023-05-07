@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:28:05 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/05/02 22:21:41 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/05/07 13:20:32 by SarahLouise   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,15 @@ void	ft_exit(void)
 
 void	ft_controls(void)
 {
-	ft_putendl_fd(" Zooming in/out: +/- keys or mouse scroll", 1);
-	ft_putendl_fd(" Closing window: ESC or cross in window", 1);
-	ft_putendl_fd(" Moving fractal: -> arrow keys", 1);
-	ft_putendl_fd(" Press S for some colour shifting shenanigans!", 1);
-	ft_putendl_fd(" Press D, B, R or G and have fun :)", 1);
-	ft_putendl_fd("** For Julia: press J, hold the curser down", 1);
-	ft_putendl_fd("** and move around to change the calculations.", 1);
+	ft_putendl_fd("\t## INSTRUCTIONS: ##", 1);
+	ft_putendl_fd(" ~ Zooming in/out: +/- keys or mouse scroll", 1);
+	ft_putendl_fd(" ~ Closing window: ESC or cross in window", 1);
+	ft_putendl_fd(" ~ Moving fractal: -> arrow keys", 1);
+	ft_putendl_fd(" ~ Press S for some colour shifting shenanigans!", 1);
+	ft_putendl_fd(" ~ Press D, B, R or G and have fun :)", 1);
+	ft_putendl_fd(" ~ Press F to switch between fractal sets", 1);
+	ft_putendl_fd("** For Julia: press J and move the curser", 1);
+	ft_putendl_fd("** around to change the calculations.", 1);
 }
 
 int	check_sign(char *str, int *sign)

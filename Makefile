@@ -6,7 +6,7 @@
 #    By: smclacke <smclacke@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/03/23 17:52:07 by smclacke      #+#    #+#                  #
-#    Updated: 2023/05/02 20:58:52 by smclacke      ########   odam.nl          #
+#    Updated: 2023/05/07 12:56:12 by SarahLouise   ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ INC_DIR			= -Iinclude -Iinclude/MLX42/include -Iinclude/libft/src
 
 CFLAGS 			= -Wall -Werror -Wextra
 CC 				= gcc -Ofast -o3
-LFLAGS 			= -ldl -lglfw3 -pthread
-FFLAGS			= -framework Cocoa -framework OpenGL -framework IOKit -Iinclude -lglfw3
+LFLAGS 			= -ldl -lglfw -pthread
+FFLAGS			= -framework Cocoa -framework OpenGL -framework IOKit -Iinclude -lglfw
 
 SRCS			= 	main.c			\
 					hook.c			\
