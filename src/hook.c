@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:13 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/05/07 13:20:15 by SarahLouise   ########   odam.nl         */
+/*   Updated: 2023/05/10 02:57:11 by SarahLouise   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,11 @@ void	extra_hooking(t_fractol *data)
 	}
 	if (mlx_is_key_down(data->mlx, MLX_KEY_F))
 	{
+		fractal(data);
 		if (data->set == 3)
 			data->set = 1;
 		else
 			data->set += 1;
-		init(data);
-		fractal(data);
 	}
 }
 
