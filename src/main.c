@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:51 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/07/23 22:55:02 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/07/23 23:01:08 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	ft_resize(int width, int height, t_fractol *data)
 	data->x_res = width;
 	data->y_res = height;
 	mlx_resize_image(data->img, width, height);
-	init(data);
 }
 
 int	main(int argc, char **argv)
