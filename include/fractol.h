@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/25 20:23:31 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/05/02 22:30:55 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/07/23 22:49:09 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ typedef struct s_fractol {
 	int					mouse[2];
 	double				xscale;
 	double				yscale;
+	int					x_res;
+	int					y_res;
 }	t_fractol;
 
 //----------Hook----------//
