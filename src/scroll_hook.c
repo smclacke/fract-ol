@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/22 18:42:56 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/25 20:05:01 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/07/23 23:45:34 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	ft_zoom_in(t_fractol *data)
 	double	newrange[2];
 
 	mlx_get_mouse_pos(data->mlx, &data->mouse[X], &data->mouse[Y]);
-	pro[X] = (double)data->mouse[X] / WIDTH;
-	pro[Y] = (double)data->mouse[Y] / HEIGHT;
+	pro[X] = (double)data->mouse[X] / data->win_width;
+	pro[Y] = (double)data->mouse[Y] / data->win_height;
 	range[X] = data->x[RT] - data->x[LT];
 	range[Y] = data->y[UP] - data->y[DN];
 	chop[X] = range[X] * 0.1;
@@ -42,8 +42,8 @@ void	ft_zoom_out(t_fractol *data)
 	double	newrange[2];
 
 	mlx_get_mouse_pos(data->mlx, &data->mouse[X], &data->mouse[Y]);
-	pro[X] = (double)data->mouse[X] / WIDTH;
-	pro[Y] = (double)data->mouse[Y] / HEIGHT;
+	pro[X] = (double)data->mouse[X] / data->win_width;
+	pro[Y] = (double)data->mouse[Y] / data->win_height;
 	range[X] = data->x[RT] - data->x[LT];
 	range[Y] = data->y[UP] - data->y[DN];
 	chop[X] = range[X] * 0.1;

@@ -6,15 +6,13 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/25 20:23:31 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/07/23 23:19:19 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/07/24 00:00:24 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# define WIDTH 700
-# define HEIGHT 700
 # define MAX_ITER 100
 
 # define MANDELBROT 1
@@ -49,8 +47,8 @@ typedef struct s_fractol {
 	int					mouse[2];
 	double				xscale;
 	double				yscale;
-	int					x_res;
-	int					y_res;
+	int					win_width;
+	int					win_height;
 }	t_fractol;
 
 //----------Hook----------//

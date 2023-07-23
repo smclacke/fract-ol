@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:38 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/07/23 23:23:19 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/07/23 23:57:13 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	init(t_fractol *data)
 	data->x[0] = -2;
 	data->x[1] = 2;
 	data->y[1] = -2;
-	data->y[0] = data->y[1] + (data->x[1] - data->x[0]) * HEIGHT / WIDTH;
+	data->y[0] = data->y[1] + (data->x[1] - data->x[0]) * \
+		data->win_height / data->win_width;
 	data->xscale = 0.1;
 	data->yscale = 0.1;
 	data->mouse[0] = 0;

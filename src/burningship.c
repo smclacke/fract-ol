@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/23 15:00:40 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/03/25 20:09:23 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/07/23 23:44:08 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,12 @@ void	burningship(t_fractol *data)
 
 	x = 0;
 	y = 0;
-	while (x < WIDTH)
+	while (x < data->win_width)
 	{
-		pos[X] = data->x[LT] + (x / WIDTH) * (data->x[RT] - data->x[LT]);
-		while (y < HEIGHT)
+		pos[X] = data->x[LT] + (x / data->win_width) * (data->x[RT] - data->x[LT]);
+		while (y < data->win_height)
 		{
-			pos[Y] = data->y[UP] + (y / HEIGHT) * (data->y[DN] - data->y[UP]);
+			pos[Y] = data->y[UP] + (y / data->win_height) * (data->y[DN] - data->y[UP]);
 			iter = init_burning(data->iter, pos[X], pos[Y]);
 			if (iter == MAX_ITER)
 				colour = 0xFF;
