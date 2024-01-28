@@ -6,7 +6,7 @@
 #    By: smclacke <smclacke@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/03/23 17:52:07 by smclacke      #+#    #+#                  #
-#    Updated: 2023/05/10 15:03:56 by smclacke      ########   odam.nl          #
+#    Updated: 2023/12/28 23:52:31 by SarahLouise   ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,10 @@ NAME 			= fractol
 INC_DIR			= -Iinclude -Iinclude/MLX42/include -Iinclude/libft/src
 
 CFLAGS 			= -Wall -Werror -Wextra
-CC 				= gcc -Ofast -o3
-LFLAGS 			= -ldl -lglfw3 -pthread
-FFLAGS			= -framework Cocoa -framework OpenGL -framework IOKit -Iinclude -lglfw3
+CC 				= gcc -Ofast 
+# -o3
+LFLAGS 			= -ldl -lglfw -pthread
+FFLAGS			= -framework Cocoa -framework OpenGL -framework IOKit -Iinclude -lglfw
 
 SRCS			= 	main.c			\
 					hook.c			\
