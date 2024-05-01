@@ -6,11 +6,11 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:38 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/07/23 23:57:13 by smclacke      ########   odam.nl         */
+/*   Updated: 2024/05/01 14:21:18 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../include/fractol.h"
 
 void	init(t_fractol *data)
 {
@@ -37,8 +37,10 @@ int	handle_args(t_fractol *data, char **argv, int argc)
 	if (argc == 4)
 		julia_args(data, argv);
 	if (argc == 2)
+	{
 		data->julia[0] = 0;
 		data->julia[1] = 1;
+	}
 	return (0);
 }
 

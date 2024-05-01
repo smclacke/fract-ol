@@ -6,19 +6,19 @@
 #    By: smclacke <smclacke@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/03/23 17:52:07 by smclacke      #+#    #+#                  #
-#    Updated: 2023/12/28 23:52:31 by SarahLouise   ########   odam.nl          #
+#    Updated: 2024/05/01 14:27:11 by smclacke      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 			= fractol
 
-INC_DIR			= -Iinclude -Iinclude/MLX42/include -Iinclude/libft/src
+INC_DIR			= -Iinclude -Iinclude/libft/src
 
+CC 				= gcc -Ofast -flto
+
+MAKEFLAGS		= --no-print-directory
 CFLAGS 			= -Wall -Werror -Wextra
-CC 				= gcc -Ofast 
-# -o3
-LFLAGS 			= -ldl -lglfw -pthread
-FFLAGS			= -framework Cocoa -framework OpenGL -framework IOKit -Iinclude -lglfw
+CFLAGS			+= -g -fsanitize=address
 
 SRCS			= 	main.c			\
 					hook.c			\
@@ -29,6 +29,11 @@ SRCS			= 	main.c			\
 					julia.c			\
 					burningship.c	\
 					colour.c
+
+MLX42_LIB		=	-Iinclude -ldl -lglfw -pthread -lm -Iinclude/MLX42/include/MLX42
+MLX42			=	include/MLX42/build/libmlx42.a
+
+LIBFT			=	include/libft/libft.a
 
 SRC_DIR			= src
 SRC				= $(addprefix $(SRC_DIR)/, $(SRCS))
@@ -47,29 +52,34 @@ CYAN		:= \033[1;96m
 WHITE		:= \033[1;97m
 BLACK		:= \033[1;90m
 
-all : libft $(NAME)
+all : $(NAME)
 
-$(NAME) : $(OBJ)
+$(NAME) : $(LIBFT) $(MLX42) $(OBJ)
 	@ echo "${BLUE} >>> fractol compiling...${RESET}"
-	@ $(CC) $^ $(CFLAGS) $(INC_DIR) include/libft/libft.a include/MLX42/build/libmlx42.a $(FFLAGS) $(LFLAGS) -o $(NAME)
+	@ $(CC) $^ $(CFLAGS) $(LIBFT) $(MLX42) $(MLX42_LIB) $(INC_DIR) -o $(NAME)
 	@ echo "${GREEN} ---> fractol Made!${RESET}"
 
-libft:
-	@ make -C include/libft
+$(LIBFT):
+	@ make $(MAKEFLAGS) -C include/libft
+
+$(MLX42):
+	@ cd include/MLX42 && cmake -B build && cmake --build build -j4
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@ mkdir -p $(OBJ_DIR)
-	@ $(CC) $(CFLAGS) $(INC_DIR) -c $< -o $@
+	@ $(CC) $(CFLAGS) -c -o $@ $<
 
 open: $(NAME)
 	@ ./$(NAME) 1
 
 clean:
-	@ make -C include/libft clean
+	@ make $(MAKEFLAGS) -C include/libft clean
+	@ rm -rf include/MLX42/build
 	@ rm -rf $(OBJ_DIR)
 
 fclean: clean
-	@ make -C include/libft fclean
+	@ make $(MAKEFLAGS) -C include/libft fclean
+	@ rm -rf $(OBJ_DIR)
 	@ rm -f $(NAME)
 	@ echo "${BLUE} // fractol fCleaned!${RESET}"
 

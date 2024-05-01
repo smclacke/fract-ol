@@ -6,11 +6,11 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:57 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/07/23 23:45:15 by smclacke      ########   odam.nl         */
+/*   Updated: 2024/05/01 14:21:27 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../include/fractol.h"
 
 // z = z2 + c
 

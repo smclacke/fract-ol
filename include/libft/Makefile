@@ -6,13 +6,13 @@
 #    By: SarahLouise <SarahLouise@student.42.fr>      +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/03/05 21:10:20 by smclacke      #+#    #+#                  #
-#    Updated: 2023/04/22 22:19:15 by smclacke      ########   odam.nl          #
+#    Updated: 2024/05/01 13:50:33 by smclacke      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libft.a
 
-CC			= gcc
+CC			= cc
 CFLAGS		= -Wall -Wextra -Werror
 ARCHIVE		= ar rcs
 RM			= rm -f
@@ -72,8 +72,6 @@ SRCS		=	ft_isalpha.c			\
 				ft_arrlen.c				\
 				ft_error.c				\
 				ft_free_arr.c			\
-				get_next_line.c			\
-				get_next_line_utils.c
 
 SRC_DIR		= src
 SRC			= $(addprefix $(SRC_DIR)/, $(SRCS))

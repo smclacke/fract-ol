@@ -6,7 +6,7 @@
 /*   By: SarahLouise <SarahLouise@student.42.fr>      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/11 19:21:06 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/04/22 22:18:57 by smclacke      ########   odam.nl         */
+/*   Updated: 2024/05/01 13:50:16 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,23 +114,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-//----------- get_next_line --------------//
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
-
-size_t	gnl_strlen(const char *s, int temp);
-
-char	*gnl_strdup(const char *s1);
-
-char	*gnl_strjoin(char const *s1, char const *s2);
-
-char	*gnl_strchr(const char *s, int c);
-
-size_t	gnl_strlcpy(char *dst, const char *src, size_t dstsize);
-
-char	*get_next_line(int fd);
 
 //--------------- Extra ------------------//
 

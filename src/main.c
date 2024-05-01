@@ -6,11 +6,11 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:51 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/07/24 00:01:44 by smclacke      ########   odam.nl         */
+/*   Updated: 2024/05/01 14:18:28 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../include/fractol.h"
 
 void	ft_resize(int32_t width, int32_t height, void *param)
 {

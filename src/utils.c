@@ -6,11 +6,11 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:28:05 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/05/07 13:20:32 by SarahLouise   ########   odam.nl         */
+/*   Updated: 2024/05/01 14:21:32 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../include/fractol.h"
 
 void	ft_help(void)
 {

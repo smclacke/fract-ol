@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/25 20:23:31 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/07/24 00:00:24 by smclacke      ########   odam.nl         */
+/*   Updated: 2024/05/01 14:19:49 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@
 # define UP 0
 # define DN 1
 
-# include "libft.h"
-# include "MLX42/MLX42.h"
+# include "libft/src/libft.h"
+# include "MLX42/include/MLX42/MLX42.h"
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>

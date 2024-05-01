@@ -6,11 +6,11 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/23 15:00:40 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/07/23 23:44:08 by smclacke      ########   odam.nl         */
+/*   Updated: 2024/05/01 14:20:12 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../include/fractol.h"
 
 // z = abs(z)2 + c
 
