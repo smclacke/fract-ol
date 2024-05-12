@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:51 by smclacke      #+#    #+#                 */
-/*   Updated: 2024/05/01 14:18:28 by smclacke      ########   odam.nl         */
+/*   Updated: 2024/05/12 12:30:44 by SarahLouise   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@ void	ft_resize(int32_t width, int32_t height, void *param)
 {
 	t_fractol	*data;
 
-	data = param;
+	data = (t_fractol *)param;
 	data->win_width = width;
 	data->win_height = height;
-	mlx_set_window_size(data->mlx, width, height);
-	mlx_resize_image(data->img, width, height);
 	fractal(data);
 }
 
