@@ -6,21 +6,35 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/11 22:27:51 by smclacke      #+#    #+#                 */
-/*   Updated: 2024/05/12 12:30:44 by SarahLouise   ########   odam.nl         */
+/*   Updated: 2024/05/14 14:39:03 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-void	ft_resize(int32_t width, int32_t height, void *param)
-{
-	t_fractol	*data;
+// mac version
+// void	ft_resize(int32_t width, int32_t height, void *param)
+// {
+// 	t_fractol	*data;
 
-	data = (t_fractol *)param;
-	data->win_width = width;
-	data->win_height = height;
-	fractal(data);
-}
+// 	data = param;
+// 	data->win_width = width;
+// 	data->win_height = height;
+// 	mlx_set_window_size(data->mlx, width, height);
+// 	mlx_resize_image(data->img, width, height);
+// 	fractal(data);
+// }
+
+// linux version but crashes
+// void	ft_resize(int32_t width, int32_t height, void *param)
+// {
+// 	t_fractol	*data;
+
+// 	data = (t_fractol *)param;
+// 	data->win_width = width;
+// 	data->win_height = height;
+// 	fractal(data);
+// }
 
 void	set_window(t_fractol *data)
 {
@@ -46,7 +60,7 @@ int	main(int argc, char **argv)
 	init(&data);
 	mlx_key_hook(data.mlx, (mlx_keyfunc) ft_key_hook, &data);
 	mlx_scroll_hook(data.mlx, (mlx_scrollfunc) ft_scroll_hook, &data);
-	mlx_resize_hook(data.mlx, (mlx_resizefunc) ft_resize, &data);
+	// mlx_resize_hook(data.mlx, (mlx_resizefunc) ft_resize, &data);
 	mlx_loop(data.mlx);
 	mlx_close_window(data.mlx);
 	mlx_terminate(data.mlx);
